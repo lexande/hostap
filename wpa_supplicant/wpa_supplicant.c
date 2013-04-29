@@ -1275,6 +1275,13 @@ void wpa_supplicant_associate(struct wpa_supplicant *wpa_s,
 	struct ieee80211_ht_capabilities htcaps_mask;
 #endif /* CONFIG_HT_OVERRIDES */
 
+	if (ssid->blacklist == 1) {
+		wpa_blacklist_add(wpa_s, bss->bssid);
+		wpa_msg(wpa_s, MSG_INFO, MACSTR " blacklisted by configuration",
+                        MAC2STR(bss->bssid));
+		return;
+	}
+
 #ifdef CONFIG_IBSS_RSN
 	ibss_rsn_deinit(wpa_s->ibss_rsn);
 	wpa_s->ibss_rsn = NULL;

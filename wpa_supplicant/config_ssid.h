@@ -89,6 +89,11 @@ struct wpa_ssid {
 	int priority;
 
 	/**
+	 * blacklist - Whether the specified network should be blacklisted
+	 */
+	int blacklist;
+
+	/**
 	 * ssid - Service set identifier (network name)
 	 *
 	 * This is the SSID for the network. For wireless interfaces, this is

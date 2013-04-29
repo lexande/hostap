@@ -1518,6 +1518,7 @@ static const struct parse_data ssid_fields[] = {
 	{ FUNC_KEY(wep_key3) },
 	{ INT(wep_tx_keyidx) },
 	{ INT(priority) },
+	{ INT(blacklist) },
 #ifdef IEEE8021X_EAPOL
 	{ INT(eap_workaround) },
 	{ STRe(pac_file) },

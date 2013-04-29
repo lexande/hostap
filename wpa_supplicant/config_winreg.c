@@ -911,6 +911,7 @@ static int wpa_config_write_network(HKEY hk, struct wpa_ssid *ssid, int id)
 		write_wep_key(netw, i, ssid);
 	INT(wep_tx_keyidx);
 	INT(priority);
+	INT(blacklist);
 #ifdef IEEE8021X_EAPOL
 	INT_DEF(eap_workaround, DEFAULT_EAP_WORKAROUND);
 	STR(pac_file);
